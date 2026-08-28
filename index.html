@@ -3,67 +3,282 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CalculayaWeb - Calculadoras online</title>
+
+<title>CalculayaWeb | Calculadoras online gratis</title>
+<meta name="description" content="Calculadoras online gratis para porcentajes, IMC, edad, hipotecas, combustible, electricidad y mucho más.">
+
 <style>
-*{box-sizing:border-box}
-body{
+*{
+  box-sizing:border-box;
   margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f7fb;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
   color:#172033;
+  line-height:1.6;
 }
+
+/* CABECERA */
+
 header{
-  background:linear-gradient(135deg,#2563eb,#7c3aed);
+  background:linear-gradient(135deg,#2563eb,#4f46e5,#7c3aed);
   color:white;
+  padding:55px 20px 70px;
   text-align:center;
-  padding:40px 20px;
 }
-header h1{margin:0;font-size:38px}
-header p{font-size:18px;margin:10px 0 0}
+
+.logo{
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:8px;
+}
+
+header p{
+  font-size:18px;
+  opacity:.95;
+  max-width:650px;
+  margin:auto;
+}
+
+/* NAVEGACIÓN */
+
+nav{
+  background:white;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.nav-content{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav-logo{
+  font-size:21px;
+  font-weight:bold;
+  color:#2563eb;
+}
+
+nav a{
+  color:#333;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:600;
+}
+
+nav a:hover{
+  color:#2563eb;
+}
+
+/* CONTENIDO */
+
 .container{
   max-width:1100px;
-  margin:30px auto;
+  margin:45px auto;
   padding:0 20px;
 }
+
+.intro{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.intro h2{
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.intro p{
+  color:#687386;
+}
+
+/* TARJETAS */
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+  gap:24px;
 }
+
 .card{
   background:white;
-  border-radius:18px;
+  border:1px solid #e6e9ef;
+  border-radius:20px;
   padding:25px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  box-shadow:0 8px 25px rgba(30,40,70,.07);
+  transition:.2s;
 }
-.card h2{margin-top:0}
-input,select,button{
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 35px rgba(30,40,70,.12);
+}
+
+.card-icon{
+  font-size:32px;
+  margin-bottom:5px;
+}
+
+.card h3{
+  font-size:21px;
+  margin-bottom:8px;
+}
+
+.card-description{
+  color:#748096;
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+input,select{
   width:100%;
-  padding:12px;
-  margin:7px 0;
+  padding:13px;
+  margin:6px 0;
+  border:1px solid #d9dee8;
   border-radius:10px;
-  border:1px solid #ddd;
-  font-size:16px;
+  font-size:15px;
+  outline:none;
 }
+
+input:focus,select:focus{
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,.1);
+}
+
 button{
+  width:100%;
+  padding:13px;
+  margin-top:8px;
+  border:0;
+  border-radius:10px;
   background:#2563eb;
   color:white;
-  border:0;
+  font-size:15px;
+  font-weight:bold;
   cursor:pointer;
-  font-weight:bold;
+  transition:.2s;
 }
-button:hover{background:#1d4ed8}
+
+button:hover{
+  background:#1d4ed8;
+  transform:translateY(-1px);
+}
+
 .result{
-  margin-top:10px;
-  padding:12px;
-  background:#eef4ff;
+  display:none;
+  margin-top:14px;
+  padding:13px;
   border-radius:10px;
+  background:#eef4ff;
+  color:#1746a2;
   font-weight:bold;
 }
-footer{
-  text-align:center;
+
+/* INFORMACIÓN */
+
+.info{
+  background:white;
+  border-radius:20px;
   padding:30px;
-  color:#666;
+  margin-top:45px;
+  box-shadow:0 8px 25px rgba(30,40,70,.06);
+}
+
+.info h2{
+  margin-bottom:10px;
+}
+
+.info p{
+  color:#626d7e;
+  margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+  margin-top:60px;
+  background:#111827;
+  color:#cbd5e1;
+  text-align:center;
+  padding:35px 20px;
+}
+
+footer strong{
+  color:white;
+  font-size:20px;
+}
+
+.footer-links{
+  margin-top:12px;
+}
+
+.footer-links a{
+  color:#cbd5e1;
+  text-decoration:none;
+  margin:0 8px;
+  font-size:14px;
+}
+
+.footer-links a:hover{
+  color:white;
+}
+
+/* MÓVIL */
+
+@media(max-width:600px){
+
+  header{
+    padding:40px 18px 55px;
+  }
+
+  .logo{
+    font-size:34px;
+  }
+
+  header p{
+    font-size:16px;
+  }
+
+  .nav-content{
+    justify-content:center;
+  }
+
+  .nav-logo{
+    font-size:19px;
+  }
+
+  nav a{
+    display:none;
+  }
+
+  .container{
+    margin:30px auto;
+  }
+
+  .intro h2{
+    font-size:26px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:22px;
+  }
 }
 </style>
 </head>
@@ -71,168 +286,386 @@ footer{
 <body>
 
 <header>
-<h1>🧮 CalculayaWeb</h1>
-<p>Calculadoras online rápidas, sencillas y gratuitas</p>
+  <div class="logo">🧮 CalculayaWeb</div>
+  <p>Calculadoras online rápidas, sencillas y gratuitas para tu día a día.</p>
 </header>
 
-<div class="container">
-<div class="grid">
+<nav>
+  <div class="nav-content">
+    <div class="nav-logo">CalculayaWeb</div>
+    <div>
+      <a href="#calculadoras">Calculadoras</a>
+      <a href="#info">Información</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+<section class="intro" id="calculadoras">
+  <h2>Calculadoras online</h2>
+  <p>Elige una calculadora e introduce tus datos para obtener el resultado.</p>
+</section>
+
+<section class="grid">
+
+<!-- 1 -->
 
 <div class="card">
-<h2>🧮 Calculadora básica</h2>
+<div class="card-icon">🧮</div>
+<h3>Calculadora básica</h3>
+<p class="card-description">Realiza operaciones matemáticas básicas.</p>
+
 <input id="a" type="number" placeholder="Primer número">
 <input id="b" type="number" placeholder="Segundo número">
+
 <select id="op">
 <option value="+">Sumar</option>
 <option value="-">Restar</option>
 <option value="*">Multiplicar</option>
 <option value="/">Dividir</option>
 </select>
+
 <button onclick="basica()">Calcular</button>
 <div class="result" id="r1"></div>
 </div>
 
+<!-- 2 -->
+
 <div class="card">
-<h2>💯 Porcentaje</h2>
+<div class="card-icon">💯</div>
+<h3>Calculadora de porcentaje</h3>
+<p class="card-description">Calcula rápidamente porcentajes.</p>
+
 <input id="por1" type="number" placeholder="Número">
 <input id="por2" type="number" placeholder="Porcentaje">
+
 <button onclick="porcentaje()">Calcular</button>
 <div class="result" id="r2"></div>
 </div>
 
+<!-- 3 -->
+
 <div class="card">
-<h2>💰 Interés simple</h2>
+<div class="card-icon">💰</div>
+<h3>Interés simple</h3>
+<p class="card-description">Calcula el crecimiento de una cantidad con interés simple.</p>
+
 <input id="capital" type="number" placeholder="Capital (€)">
 <input id="interes" type="number" placeholder="Interés anual (%)">
 <input id="años" type="number" placeholder="Años">
+
 <button onclick="simple()">Calcular</button>
 <div class="result" id="r3"></div>
 </div>
 
+<!-- 4 -->
+
 <div class="card">
-<h2>📈 Interés compuesto</h2>
+<div class="card-icon">📈</div>
+<h3>Interés compuesto</h3>
+<p class="card-description">Calcula una inversión con interés compuesto.</p>
+
 <input id="cc" type="number" placeholder="Capital inicial (€)">
 <input id="ci" type="number" placeholder="Interés anual (%)">
 <input id="ca" type="number" placeholder="Años">
+
 <button onclick="compuesto()">Calcular</button>
 <div class="result" id="r4"></div>
 </div>
 
+<!-- 5 -->
+
 <div class="card">
-<h2>⚖️ Calculadora de IMC</h2>
+<div class="card-icon">⚖️</div>
+<h3>Calculadora de IMC</h3>
+<p class="card-description">Calcula el índice de masa corporal.</p>
+
 <input id="peso" type="number" placeholder="Peso (kg)">
 <input id="altura" type="number" placeholder="Altura (m)">
-<button onclick="imc()">Calcular</button>
+
+<button onclick="imc()">Calcular IMC</button>
 <div class="result" id="r5"></div>
 </div>
 
+<!-- 6 -->
+
 <div class="card">
-<h2>🎂 Calculadora de edad</h2>
+<div class="card-icon">🎂</div>
+<h3>Calculadora de edad</h3>
+<p class="card-description">Descubre tu edad introduciendo tu fecha de nacimiento.</p>
+
 <input id="nacimiento" type="date">
-<button onclick="edad()">Calcular</button>
+
+<button onclick="edad()">Calcular edad</button>
 <div class="result" id="r6"></div>
 </div>
 
+<!-- 7 -->
+
 <div class="card">
-<h2>📏 Metros a kilómetros</h2>
+<div class="card-icon">📏</div>
+<h3>Conversor de distancia</h3>
+<p class="card-description">Convierte metros a kilómetros.</p>
+
 <input id="metros" type="number" placeholder="Metros">
+
 <button onclick="distancia()">Convertir</button>
 <div class="result" id="r7"></div>
 </div>
 
+<!-- 8 -->
+
 <div class="card">
-<h2>⚡ Consumo eléctrico</h2>
+<div class="card-icon">⚡</div>
+<h3>Consumo eléctrico</h3>
+<p class="card-description">Calcula aproximadamente el coste diario de electricidad.</p>
+
 <input id="kw" type="number" placeholder="Potencia (kW)">
 <input id="horas" type="number" placeholder="Horas al día">
 <input id="precio" type="number" placeholder="Precio €/kWh">
+
 <button onclick="electricidad()">Calcular</button>
 <div class="result" id="r8"></div>
 </div>
 
+<!-- 9 -->
+
 <div class="card">
-<h2>🚗 Combustible</h2>
+<div class="card-icon">🚗</div>
+<h3>Calculadora de combustible</h3>
+<p class="card-description">Calcula cuánto cuesta llenar el depósito.</p>
+
 <input id="litros" type="number" placeholder="Litros">
 <input id="precioGas" type="number" placeholder="Precio por litro (€)">
+
 <button onclick="gasolina()">Calcular</button>
 <div class="result" id="r9"></div>
 </div>
 
+<!-- 10 -->
+
 <div class="card">
-<h2>🏠 Hipoteca</h2>
+<div class="card-icon">🏠</div>
+<h3>Calculadora de hipoteca</h3>
+<p class="card-description">Estima una cuota mensual de hipoteca.</p>
+
 <input id="hipoteca" type="number" placeholder="Cantidad (€)">
 <input id="tasa" type="number" placeholder="Interés anual (%)">
-<input id="plazo" type="number" placeholder="Años">
+<input id="plazo" type="number" placeholder="Plazo en años">
+
 <button onclick="hipotecaCalc()">Calcular</button>
 <div class="result" id="r10"></div>
 </div>
 
-</div>
-</div>
+</section>
+
+<section class="info" id="info">
+<h2>Sobre CalculayaWeb</h2>
+
+<p>
+CalculayaWeb ofrece herramientas online gratuitas para realizar cálculos
+de forma rápida y sencilla.
+</p>
+
+<p>
+Puedes utilizar nuestras calculadoras desde el ordenador, tablet o teléfono móvil.
+</p>
+</section>
+
+</main>
 
 <footer>
-© 2026 CalculayaWeb · Calculadoras online gratuitas
+
+<strong>🧮 CalculayaWeb</strong>
+
+<div class="footer-links">
+<a href="#info">Sobre nosotros</a>
+<a href="#">Privacidad</a>
+<a href="#">Cookies</a>
+<a href="#">Contacto</a>
+</div>
+
+<p style="margin-top:15px;font-size:13px;">
+© 2026 CalculayaWeb · Todos los derechos reservados
+</p>
+
 </footer>
 
 <script>
+
+function mostrar(id,texto){
+  const elemento=document.getElementById(id);
+  elemento.innerText=texto;
+  elemento.style.display="block";
+}
+
 function basica(){
-let a=+document.getElementById("a").value,b=+document.getElementById("b").value,o=document.getElementById("op").value;
-let r=o=="+"?a+b:o=="-"?a-b:o=="*"?a*b:b!==0?a/b:"No se puede dividir entre 0";
-document.getElementById("r1").innerText="Resultado: "+r;
-}
 
-function porcentaje(){
-let a=+document.getElementById("por1").value,b=+document.getElementById("por2").value;
-document.getElementById("r2").innerText="Resultado: "+(a*b/100);
-}
+let a=Number(document.getElementById("a").value);
+let b=Number(document.getElementById("b").value);
+let o=document.getElementById("op").value;
 
-function simple(){
-let c=+document.getElementById("capital").value,i=+document.getElementById("interes").value,a=+document.getElementById("años").value;
-document.getElementById("r3").innerText="Total: "+(c+(c*i/100)*a).toFixed(2)+" €";
-}
+if(!document.getElementById("a").value ||
+!document.getElementById("b").value){
 
-function compuesto(){
-let c=+document.getElementById("cc").value,i=+document.getElementById("ci").value,a=+document.getElementById("ca").value;
-document.getElementById("r4").innerText="Total: "+(c*Math.pow(1+i/100,a)).toFixed(2)+" €";
-}
-
-function imc(){
-let p=+document.getElementById("peso").value,h=+document.getElementById("altura").value;
-if(h<=0){document.getElementById("r5").innerText="Introduce una altura válida";return}
-document.getElementById("r5").innerText="IMC: "+(p/(h*h)).toFixed(2);
-}
-
-function edad(){
-let f=new Date(document.getElementById("nacimiento").value);
-if(isNaN(f)){document.getElementById("r6").innerText="Introduce tu fecha";return}
-let hoy=new Date(),e=hoy.getFullYear()-f.getFullYear();
-if(hoy.getMonth()<f.getMonth()||(hoy.getMonth()==f.getMonth()&&hoy.getDate()<f.getDate()))e--;
-document.getElementById("r6").innerText="Edad: "+e+" años";
-}
-
-function distancia(){
-let m=+document.getElementById("metros").value;
-document.getElementById("r7").innerText=m+" metros = "+(m/1000)+" km";
-}
-
-function electricidad(){
-let k=+document.getElementById("kw").value,h=+document.getElementById("horas").value,p=+document.getElementById("precio").value;
-document.getElementById("r8").innerText="Coste diario: "+(k*h*p).toFixed(2)+" €";
-}
-
-function gasolina(){
-let l=+document.getElementById("litros").value,p=+document.getElementById("precioGas").value;
-document.getElementById("r9").innerText="Coste: "+(l*p).toFixed(2)+" €";
-}
-
-function hipotecaCalc(){
-let c=+document.getElementById("hipoteca").value,r=+document.getElementById("tasa").value/100/12,n=+document.getElementById("plazo").value*12;
-if(r===0){
-document.getElementById("r10").innerText="Cuota: "+(c/n).toFixed(2)+" €";
+mostrar("r1","Introduce los dos números.");
 return;
 }
-let cuota=c*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
-document.getElementById("r10").innerText="Cuota mensual: "+cuota.toFixed(2)+" €";
+
+if(o==="/" && b===0){
+
+mostrar("r1","No se puede dividir entre 0.");
+return;
 }
+
+let r;
+
+if(o==="+") r=a+b;
+if(o==="-") r=a-b;
+if(o==="*") r=a*b;
+if(o==="/") r=a/b;
+
+mostrar("r1","Resultado: "+r);
+}
+
+
+function porcentaje(){
+
+let a=Number(document.getElementById("por1").value);
+let b=Number(document.getElementById("por2").value);
+
+if(!document.getElementById("por1").value ||
+!document.getElementById("por2").value){
+
+mostrar("r2","Introduce los datos.");
+return;
+}
+
+mostrar("r2","Resultado: "+(a*b/100).toFixed(2));
+}
+
+
+function simple(){
+
+let c=Number(document.getElementById("capital").value);
+let i=Number(document.getElementById("interes").value);
+let a=Number(document.getElementById("años").value);
+
+let total=c+(c*i/100)*a;
+
+mostrar("r3","Total: "+total.toFixed(2)+" €");
+}
+
+
+function compuesto(){
+
+let c=Number(document.getElementById("cc").value);
+let i=Number(document.getElementById("ci").value);
+let a=Number(document.getElementById("ca").value);
+
+let total=c*Math.pow(1+i/100,a);
+
+mostrar("r4","Total: "+total.toFixed(2)+" €");
+}
+
+
+function imc(){
+
+let p=Number(document.getElementById("peso").value);
+let h=Number(document.getElementById("altura").value);
+
+if(p<=0 || h<=0){
+
+mostrar("r5","Introduce valores válidos.");
+return;
+}
+
+let resultado=p/(h*h);
+
+mostrar("r5","Tu IMC es: "+resultado.toFixed(2));
+}
+
+
+function edad(){
+
+let valor=document.getElementById("nacimiento").value;
+
+if(!valor){
+
+mostrar("r6","Introduce tu fecha de nacimiento.");
+return;
+}
+
+let nacimiento=new Date(valor);
+let hoy=new Date();
+
+let e=hoy.getFullYear()-nacimiento.getFullYear();
+
+let mes=hoy.getMonth()-nacimiento.getMonth();
+
+if(mes<0 || (mes===0 && hoy.getDate()<nacimiento.getDate())){
+e--;
+}
+
+mostrar("r6","Tienes "+e+" años.");
+}
+
+
+function distancia(){
+
+let m=Number(document.getElementById("metros").value);
+
+mostrar("r7",m+" metros = "+(m/1000).toFixed(3)+" km");
+}
+
+
+function electricidad(){
+
+let k=Number(document.getElementById("kw").value);
+let h=Number(document.getElementById("horas").value);
+let p=Number(document.getElementById("precio").value);
+
+let coste=k*h*p;
+
+mostrar("r8","Coste diario aproximado: "+coste.toFixed(2)+" €");
+}
+
+
+function gasolina(){
+
+let l=Number(document.getElementById("litros").value);
+let p=Number(document.getElementById("precioGas").value);
+
+let coste=l*p;
+
+mostrar("r9","Coste total: "+coste.toFixed(2)+" €");
+}
+
+
+function hipotecaCalc(){
+
+let c=Number(document.getElementById("hipoteca").value);
+let r=Number(document.getElementById("tasa").value)/100/12;
+let n=Number(document.getElementById("plazo").value)*12;
+
+if(c<=0 || n<=0){
+
+mostrar("r10","Introduce valores válidos.");
+return;
+}
+
+if(r===0){
+
+mostrar("r10","Cuota mensual: "+(c/n).toFixed(2)+" €");
+return;
+}
+
+let cuota=c*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+
+mostrar("r10","Cuota mensual aproximada: "+cuota.toFixed(2)+" €");
+}
+
 </script>
 
 </body>
